@@ -1,0 +1,264 @@
+/*  General */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Video */
+.video {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.video video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* App */
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "a a a a a a"
+    "a a a a a a"
+    "d d d d d d"
+    "s s s s s s";
+
+  transition: opacity 0.5s ease-in-out;
+}
+.inactive {
+  opacity: 0;
+}
+/* Audio */
+.audio {
+  grid-area: a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.audio .pp-icon {
+  font-size: 64px;
+  cursor: pointer;
+}
+.audio .progress {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  margin: 0 40px;
+}
+.audio .play .pp-icon,
+.pause .pp-icon {
+  font-size: 64px;
+}
+.pp-icon:hover {
+  color: #a67db0;
+}
+.audio .progress svg {
+  width: 200px;
+  height: 200px;
+  transform: rotate(-90deg);
+  position: absolute;
+  z-index: -1;
+}
+.audio .progress .audio-remaining-time {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Durations */
+.durations {
+  grid-area: d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20% 30% 0 30%;
+  background-color: #a692abbc;
+  border-radius: 20px;
+}
+.durations .duration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  filter: drop-shadow(0px 0px 15px #222);
+}
+.durations .duration p:hover {
+  color: #280f2e;
+}
+ion-icon {
+  font-size: 32px;
+  color: #fff;
+}
+ion-icon:hover {
+  color: #280f2e;
+}
+.durations .duration p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 5px;
+  text-shadow: 0 0 15px #222;
+}
+
+/* Themes/Seasons */
+.seasons {
+  grid-area: s;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.seasons .season .icon-theme {
+  font-size: 50px;
+  padding: 0 7px;
+  filter: drop-shadow(0px 0px 15px #222);
+  cursor: pointer;
+}
+
+/* Toggle Menu */
+.toggle-menu {
+  display: none;
+}
+
+/* Tablet/Mobile devices */
+/* Video */
+@media screen and (max-width: 830px) {
+  .durations {
+    gap: 0;
+  }
+  .durations .duration p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .video video {
+    height: 100%;
+  }
+
+  /* App */
+  .app {
+    grid-template-areas:
+      "a"
+      "a"
+      "d"
+      "";
+  }
+
+  /* Audio */
+  .audio .progress {
+    width: 175px;
+    height: 175px;
+    margin: 0 10px;
+  }
+
+  .audio .progress svg {
+    width: 175px;
+    height: 175px;
+  }
+
+  .audio .progress .circle1,
+  .circle {
+    width: 125px;
+    height: 125px;
+  }
+
+  .audio .progress .audio-remaining-time {
+    font-size: 1.75rem;
+  }
+
+  /* Durations */
+  .durations {
+    margin: 25% 10% 0 10%;
+  }
+
+  .durations .duration p {
+    font-size: 1rem;
+  }
+
+  /* Themes/Seasons */
+  .seasons {
+    position: absolute;
+    cursor: pointer;
+    top: 20px;
+    left: -310px;
+    padding: 5px 2px;
+    flex-direction: row;
+    background-color: #ba99c3c6;
+    border-radius: 0 5px 5px 0;
+    transition: left 0.5s ease-in-out;
+  }
+
+  .open {
+    left: 0px;
+  }
+  .seasons .season {
+    margin-left: 10px;
+  }
+
+  .seasons .season img {
+    width: 50px;
+    filter: none;
+  }
+  .seasons .season .icon-theme {
+    font-size: 50px;
+    padding: 0 1px;
+  }
+  .durations {
+    margin: 20% 10% 0 10%;
+  }
+  /* Toggle Menu */
+  .toggle-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    margin-left: 10px;
+    border-radius: 50%;
+    transition: all 0.5s ease-in-out;
+  }
+  .rotate {
+    transform: rotate(180deg);
+  }
+  .toggle-menu:hover {
+    background-color: #d9b7e3b7;
+    cursor: pointer;
+  }
+  .toggle-menu img {
+    width: 20px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .toggle-menu {
+    padding: 2px;
+    margin-left: 8px;
+  }
+  .seasons .season .icon-theme {
+    font-size: 47px;
+  }
+  .durations {
+    margin: -10% 10%;
+  }
+}

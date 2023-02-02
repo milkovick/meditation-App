@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+    <title>Meditation App</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.jpg" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="video">
+      <video autoplay loop muted="true">
+        <source src="./assets/video/video-home.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <div class="app">
+      <div class="audio">
+        <audio>
+          <source src="./assets/audio/meditation.mp3" type="audio/mpeg" />
+        </audio>
+
+        <div class="pause">
+          <ion-icon name="pause-circle-outline" class="pp-icon"></ion-icon>
+        </div>
+
+        <div class="progress">
+          <svg
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            width="120px"
+            height="120px"
+            viewBox="0 0 120 120"
+            enable-background="new 0 0 120 120"
+            xml:space="preserve"
+          >
+            <circle
+              class="circle1"
+              fill="transparent"
+              stroke="#a67db0"
+              stroke-width="5"
+              stroke-miterlimit="10"
+              cx="60"
+              cy="60"
+              r="50"
+            />
+            <circle
+              class="circle"
+              fill="transparent"
+              stroke="#fff"
+              stroke-width="5"
+              stroke-miterlimit="10"
+              cx="60"
+              cy="60"
+              r="50"
+            />
+          </svg>
+
+          <div class="audio-remaining-time">00:00</div>
+        </div>
+
+        <div class="play">
+          <ion-icon name="play-circle-outline" class="pp-icon"></ion-icon>
+        </div>
+      </div>
+      <div class="durations">
+        <div class="duration" audio-duration="300">
+          <ion-icon name="timer-outline"></ion-icon>
+          <p>5 min</p>
+        </div>
+        <div class="duration" audio-duration="600">
+          <ion-icon name="timer-outline"></ion-icon>
+          <p>10 min</p>
+        </div>
+        <div class="duration" audio-duration="900">
+          <ion-icon name="timer-outline"></ion-icon>
+          <p>15 min</p>
+        </div>
+        <div class="duration" audio-duration="1200">
+          <ion-icon name="timer-outline"></ion-icon>
+          <p>20 min</p>
+        </div>
+      </div>
+
+      <div class="seasons">
+        <div class="season" video-src="./assets/video/video-home.mp4">
+          <ion-icon name="home-outline" class="icon-theme"></ion-icon>
+        </div>
+        <div class="season" video-src="./assets/video/video-sea.mp4">
+          <ion-icon name="sunny-outline" class="icon-theme"></ion-icon>
+        </div>
+        <div class="season" video-src="./assets/video/video-forest.mp4">
+          <ion-icon name="leaf-outline" class="icon-theme"></ion-icon>
+        </div>
+        <div class="season" video-src="./assets/video/video-sky.mp4">
+          <ion-icon name="snow-outline" class="icon-theme"></ion-icon>
+        </div>
+        <div class="season" video-src="./assets/video/video-rain.mp4">
+          <ion-icon name="rainy-outline" class="icon-theme"></ion-icon>
+        </div>
+        <div class="toggle-menu">
+          <img src="./assets/images/right-arrow.png" alt="open menu" />
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/hide-buttons.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
